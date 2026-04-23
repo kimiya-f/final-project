@@ -354,6 +354,11 @@ footer {
   border-bottom: 5px inset #9b72cf;
 }
 
+.dark-mode .skip a {
+  background-color: #5a3e8a;
+  color: #ffffff;
+}
+
 .dark-mode h1,
 .dark-mode h2,
 .dark-mode h3,
