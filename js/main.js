@@ -21,25 +21,27 @@ var modal = document.getElementById("class-modal");
 var span = document.querySelector(".close");
 var cards = document.querySelectorAll(".class-card");
 
-// when you click a card, pull its info and show it in the modal
-cards.forEach(function(card) {
-  card.addEventListener("click", function() {
-    document.getElementById("modal-title").textContent = card.querySelector("h3").textContent;
-    document.getElementById("modal-description").textContent = card.querySelector("p").textContent;
-    document.getElementById("modal-details").innerHTML = card.querySelector(".class-details").innerHTML;
-    modal.style.display = "block";
+if (modal && span) {
+  // when you click a card, pull its info and show it in the modal
+  cards.forEach(function(card) {
+    card.addEventListener("click", function() {
+      document.getElementById("modal-title").textContent = card.querySelector("h3").textContent;
+      document.getElementById("modal-description").textContent = card.querySelector("p").textContent;
+      document.getElementById("modal-details").innerHTML = card.querySelector(".class-details").innerHTML;
+      modal.style.display = "block";
+    });
   });
-});
 
-// close the modal when you click the X
-span.onclick = function() {
-  modal.style.display = "none";
-}
-
-// also close it if you click outside the modal box
-window.onclick = function(event) {
-  if (event.target == modal) {
+  // close the modal when you click the X
+  span.onclick = function() {
     modal.style.display = "none";
+  }
+
+  // also close it if you click outside the modal box
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
   }
 }
 
